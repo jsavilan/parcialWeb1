@@ -1,4 +1,5 @@
 import { getDictionary } from "./dictionaries"
+import Link from "next/link"
 
 export default async function Page({
   params,
@@ -14,6 +15,10 @@ export default async function Page({
       <h1>{dict.home.title}</h1>
 
       <p>{dict.home.description}</p>
+
+      <Link href={`/${lang}/profiles`}>
+        {dict.profile.title}
+      </Link>
     </main>
   )
 }

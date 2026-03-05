@@ -1,9 +1,17 @@
 {
   "home": {
-    "title": "Welcome",
-    "description": "Internationalization example with Next.js"
+    "title": "Harry Potter Characters",
+    "description": "Explore the magical universe of Harry Potter; a complete list of characters with their houses, species, and main facts"
   },
   "profile": {
-    "title": "Profile"
+    "title": "Profile",
+    "nameL": "Name",
+    "genderL" : "Gender",
+    "houseL": "House",
+    "Wand" : {
+        "wood": "Wood",
+        "core": "Core",
+        "length": "Length (cm)"
+    }
   }
 }
