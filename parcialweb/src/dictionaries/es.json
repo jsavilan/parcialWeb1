@@ -1,0 +1,9 @@
+{
+  "home": {
+    "title": "Bienvenido",
+    "description": "Ejemplo de internacionalización con Next.js"
+  },
+  "profile": {
+    "title": "Perfil"
+  }
+}
