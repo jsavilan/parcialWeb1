@@ -8,21 +8,30 @@ export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
   const pathnameHasLocale = locales.some(
-    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
+    (locale) => pathname.startsWith(`/${locale}`)
   )
 
   if (pathnameHasLocale) return
 
-  const locale = request.headers
+  // revisamos si el usuario ya tiene algo de preferencias
+  const cookieLocale = request.cookies.get("locale")?.value
+
+  if (cookieLocale && locales.includes(cookieLocale)) {
+    request.nextUrl.pathname = `/${cookieLocale}${pathname}`
+    return NextResponse.redirect(request.nextUrl)
+  }
+
+  // sino lo hacemos con accept language del header de peticion
+  const acceptLang = request.headers
     .get("accept-language")
     ?.split(",")[0]
     ?.split("-")[0]
 
-  const selectedLocale = locales.includes(locale || "")
-    ? locale
+  const locale = locales.includes(acceptLang || "")
+    ? acceptLang
     : defaultLocale
 
-  request.nextUrl.pathname = `/${selectedLocale}${pathname}`
+  request.nextUrl.pathname = `/${locale}${pathname}`
 
   return NextResponse.redirect(request.nextUrl)
 }
