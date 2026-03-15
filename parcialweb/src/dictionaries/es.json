@@ -8,9 +8,10 @@
     "nameL": "Nombre",
     "genderL" : "Genero",
     "houseL": "Casa",
+    "NA": "Desconocido",
     "Wand" : {
         "wood": "Madera",
-        "core": "Nucleo",
+        "core": "Varita",
         "length": "Longitud (cm)"
     }
   }

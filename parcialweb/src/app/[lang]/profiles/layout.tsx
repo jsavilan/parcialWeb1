@@ -1,19 +1,13 @@
-export async function generateStaticParams() {
-  return [{ lang: "en" }, { lang: "es" }]
-}
+import React from "react"
 
-export default async function RootLayout({
+export default function ProfilesLayout({
   children,
-  params,
 }: {
   children: React.ReactNode
-  params: Promise<{ lang: "en" | "es" }>
 }) {
-  const { lang } = await params
-
   return (
-    <html lang={lang}>
-      <body>{children}</body>
-    </html>
+    <section className="w-full py-10">
+        {children}
+    </section>
   )
 }

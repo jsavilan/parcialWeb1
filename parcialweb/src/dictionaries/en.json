@@ -8,9 +8,10 @@
     "nameL": "Name",
     "genderL" : "Gender",
     "houseL": "House",
+    "NA": "Unknown",
     "Wand" : {
         "wood": "Wood",
-        "core": "Core",
+        "core": "Wand",
         "length": "Length (cm)"
     }
   }

@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+:root {
+  --header-bg: #FDB608;   /* Fondo del Header */
+  --footer-bg: #BBCCBB;   /* Fondo del Footer */
+  --main-bg: #e0e0e0;     /* Fondo del Main */
+}

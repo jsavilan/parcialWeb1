@@ -1,9 +1,6 @@
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Listado de personajes - HarryPotterApp",
-  description: "Explora el universo mágico de Harry Potter: un listado completo de personajes con su casa, especie y datos principales",
-};
+import Header from "./components/header";
+import Footer from "./components/footer";
+import "../globals.css"
 
 export async function generateStaticParams() {
   return [{ lang: "en" }, { lang: "es" }]
@@ -17,20 +14,14 @@ export default async function RootLayout({
   params: Promise<{ lang: "en" | "es" }>
 }) {
   const { lang } = await params
-  const max = 12;
-
   return (
     <html lang={lang}>
       <body>
-        <header>
-
-        </header>
-        <main>
+        <Header lang={lang}></Header>
+        <main className="bg-[var(--main-bg)]">
           {children}
         </main>
-        <footer>
-
-        </footer>
+        <Footer></Footer>
       </body>
     </html>
   )
